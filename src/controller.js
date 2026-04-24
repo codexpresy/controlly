@@ -1,3 +1,4 @@
+import { emailException } from "@codenodey/faily";
 import { Mail } from "meily";
 
 /**
@@ -43,41 +44,10 @@ export const controller = (controller) => {
             // Solo para entornos de producción envía un correo
             if (environments.includes(process.env.APP_ENVIRONMENT)) {
                 try {
-                    Mail.from(process.env.MAIL_FROM)
-                        .to(process.env.MAIL_TO)
-                        .content(`
-                            <div style="margin-bottom: 20px">
-                                <b>ERROR:</b><br>
-                                ${error.message} <br><br>
-                                ${error.stack}
-                            </div>
-                            <div style="margin-bottom: 20px">
-                                <b>ENDPOINT:</b><br>
-                                ${req.protocol + '://' + req.get('host') + req.originalUrl}
-                            </div>
-                            <div style="margin-bottom: 20px">
-                                <b>BODY:</b><br>
-                                <pre style="background: #f6f6f6; padding: 10px; border: 1px solid #ccc;">${JSON.stringify(req.body, null, 2)}</pre>
-                            </div>
-                            <div style="margin-bottom: 20px">
-                                <b>DATE:</b><br>
-                                ${new Date().toLocaleString('en-CA', {
-                                    year: 'numeric',
-                                    month: '2-digit',
-                                    day: '2-digit',
-                                    hour: 'numeric',
-                                    minute: '2-digit',
-                                    second: '2-digit',
-                                    hour12: true
-                                }).replace(',', '')}
-                            </div>
-                            <div style="margin-bottom: 20px">
-                                <b>ENVIRONMENT:</b><br>
-                                ${process.env.APP_ENVIRONMENT}
-                            </div>
-                        `)
-                        .subject('Error en la plataforma')
-                        .send()
+                    emailException(error, {
+                        ENDPOINT: req.protocol + '://' + req.get('host') + req.originalUrl,
+                        BODY: req.body
+                    });
                 } catch (mailError) {
                     console.error(mailError);
                 }
@@ -85,7 +55,7 @@ export const controller = (controller) => {
 
             console.error(error.stack);
 
-            // 🔹 Dejar que Express maneje el error
+            // Dejar que Express maneje el error
             return next(error);
         }
     };

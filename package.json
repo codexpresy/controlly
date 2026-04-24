@@ -1,6 +1,6 @@
 {
-  "name": "controlly",
-  "version": "1.0.6",
+  "name": "@codexpresy/controlly",
+  "version": "1.0.7",
   "description": "Middleware para Express que facilita la gestión de transacciones con Sequelize y el manejo centralizado de errores, incluyendo notificaciones por correo en producción.",
   "main": "dist/controlly.cjs",
   "module": "dist/controlly.mjs",
@@ -10,13 +10,13 @@
     "require": "./dist/controlly.cjs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node test/controller.cjs",
     "build": "rollup -c",
     "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CrisGuzmanS/controlly.git"
+    "url": "git+https://github.com/codexpresy/controlly.git"
   },
   "keywords": [
     "controller",
@@ -29,10 +29,11 @@
   "author": "Cristian Emanuelle Guzmán Suárez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CrisGuzmanS/controlly/issues"
+    "url": "https://github.com/codexpresy/controlly/issues"
   },
-  "homepage": "https://github.com/CrisGuzmanS/controlly#readme",
+  "homepage": "https://github.com/codexpresy/controlly#readme",
   "dependencies": {
+    "@codenodey/faily": "^0.0.1",
     "meily": "^1.0.3"
   },
   "devDependencies": {
