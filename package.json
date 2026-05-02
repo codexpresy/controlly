@@ -1,6 +1,6 @@
 {
-  "name": "@codexpresy/controlly",
-  "version": "1.0.8",
+  "name": "@ellexpress/controlly",
+  "version": "0.0.1",
   "description": "Middleware para Express que facilita la gestión de transacciones con Sequelize y el manejo centralizado de errores, incluyendo notificaciones por correo en producción.",
   "main": "dist/controlly.cjs",
   "module": "dist/controlly.mjs",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codexpresy/controlly.git"
+    "url": "git+https://github.com/ellexpress/controlly.git"
   },
   "keywords": [
     "controller",
@@ -29,11 +29,11 @@
   "author": "Cristian Emanuelle Guzmán Suárez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/codexpresy/controlly/issues"
+    "url": "https://github.com/ellexpress/controlly/issues"
   },
-  "homepage": "https://github.com/codexpresy/controlly#readme",
+  "homepage": "https://github.com/ellexpress/controlly#readme",
   "dependencies": {
-    "@codenodey/faily": "^0.0.1",
+    "@ellenode/faily": "^0.0.1",
     "meily": "^1.0.3"
   },
   "devDependencies": {

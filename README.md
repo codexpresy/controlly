@@ -13,14 +13,14 @@ Controlly is a simple Express.js middleware that wraps your controller functions
 ## 🚀 Installation
 
 ```bash
-npm install @codexpresy/controlly
+npm install @ellexpress/controlly
 ```
 
 ## 📦 Usage example
 
 ```javascript
 import express from 'express';
-import { controller } from '@codexpresy/controlly';
+import { controller } from '@ellexpress/controlly';
 import { moviesController } from './controllers/movies.controller.js';
 
 const app = express();

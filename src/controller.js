@@ -1,4 +1,4 @@
-import { emailException } from "@codenodey/faily";
+import { emailException } from "@ellenode/faily";
 import { Mail } from "meily";
 
 /**
